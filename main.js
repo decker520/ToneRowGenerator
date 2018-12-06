@@ -1,5 +1,9 @@
 let tone_rng = document.getElementById("tone_rng").value;
 let tone_dvsn = document.getElementById("tone_dvsn").value;
+let ToneRow = [];
+let Inversion = [];
+let Retrograde = [];
+let RetroInversion = [];
 
 function ChangeRange() {
   
@@ -50,14 +54,29 @@ function ClickGen() {
     return;
   }
   
-  let ToneRow = GenerateToneRow();
-  let Inversion = GenerateInversion(ToneRow);
-  let Retrograde = GenerateRetrograde(ToneRow);
-  let RetroInversion = GenerateRetrograde(GenerateInversion(ToneRow));
-  document.getElementById("output a").innerHTML = PrintRow(ToneRow);
-  document.getElementById("output b").innerHTML = PrintRow(Inversion);
-  document.getElementById("output c").innerHTML = PrintRow(Retrograde);
-  document.getElementById("output d").innerHTML = PrintRow(RetroInversion);
+  ToneRow = GenerateToneRow();
+  GenerateSecondary();
+  
+}
+
+function ClickTransFwd() {
+  
+  ToneRow = TransFwd(ToneRow);
+  GenerateSecondary();
+  
+}
+
+function ClickTransBkwd() {
+  
+  ToneRow = TransBkwd(ToneRow);
+  GenerateSecondary();
+  
+}
+
+function ClickCntr() {
+  
+  ToneRow = Cntr(ToneRow);
+  GenerateSecondary();
   
 }
 
@@ -94,6 +113,18 @@ function GenerateToneRow() {
   
 }
 
+function GenerateSecondary() {
+  
+  Inversion = GenerateInversion(ToneRow);
+  Retrograde = GenerateRetrograde(ToneRow);
+  RetroInversion = GenerateRetrograde(GenerateInversion(ToneRow));
+  document.getElementById("output a").innerHTML = PrintRow(ToneRow);
+  document.getElementById("output b").innerHTML = PrintRow(Inversion);
+  document.getElementById("output c").innerHTML = PrintRow(Retrograde);
+  document.getElementById("output d").innerHTML = PrintRow(RetroInversion);
+  
+}
+
 function GenerateInversion(tone_lst) {  
   
   let tmp_lst = [];
@@ -120,6 +151,29 @@ function GenerateRetrograde(tone_lst) {
 
   return tmp_lst;
   
+}
+
+function TransFwd(tone_lst){
+   
+  tone_lst.push(tone_lst.shift()); 
+  
+  return tone_lst;
+}
+
+function TransBkwd(tone_lst){
+  
+  tone_lst.unshift(tone_lst.pop()); 
+  
+  return tone_lst;
+}
+
+function Cntr(tone_lst) {
+  
+  while (tone_lst[0] != 1){
+    TransFwd(tone_lst);
+  }
+  
+  return tone_lst;
 }
 
 function PrintRow(tone_lst) {  
