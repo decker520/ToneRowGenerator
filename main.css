@@ -10,6 +10,10 @@ body {
   padding: 2em;
 }
 
+h1 {
+  padding: 3%;
+}
+
 h1, h2 {
   margin-top: 0;
   font-weight: normal;
@@ -28,7 +32,8 @@ h2 {
 
 .button {
   background-color: white;
-  border: 2px solid black;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24), 0 4px 8px 0 rgba(0,0,0,0.19);
+  border-radius: 8px;
   outline: none;
   font-size: 200%;
   padding: 8px 32px;
@@ -54,11 +59,15 @@ h2 {
   width: 100%;
 }
 
-.button:hover {
+.button {
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24), 0 4px 8px 0 rgba(0,0,0,0.19);
+  background: white;
 }
+
 .button:active {
-  transform: translateY(2px);
+  color: magenta;
+  background: #f2f2f2;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24), 0 8px 16px 0 rgba(0,0,0,0.19);
 }
 
 .text {
