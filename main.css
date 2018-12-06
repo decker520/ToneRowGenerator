@@ -10,10 +10,6 @@ body {
   padding: 2em;
 }
 
-h1 {
-  padding: 3%;
-}
-
 h1, h2 {
   margin-top: 0;
   font-weight: normal;
@@ -22,8 +18,9 @@ h1, h2 {
 }
 
 h1 {
-  background-color: orange;
+  background-color: #ffcc33;
   font-size: 300%;
+  padding: 3%;
 }
 
 h2 {
@@ -88,19 +85,21 @@ h2 {
   height: 200%;
   background-color: white;
   grid-template: 1fr 1fr / 1fr 1fr;
-  grid-gap: 10px 10px;
+  grid-gap: 15px 15px;
 }
 
 .box {
   display: table;
   width: 100%;
-  min-height: 350px;
+  min-height: 340px;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .title {
   display: table-row;
   vertical-align: middle;
-  height: 10%;
+  height: 5%;
   font-size: 200%;
 }
 
@@ -109,6 +108,8 @@ h2 {
   vertical-align: middle;
   font-family: monospace;
   font-size: 200%;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .a {
