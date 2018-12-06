@@ -35,22 +35,23 @@ h2 {
   width: 48%;
 }
 
+.button:hover {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24), 0 4px 8px 0 rgba(0,0,0,0.19);
+}
+.button:active {
+  transform: translateY(2px);
+}
+
 .text {
   background-color: white;
   border: 2px solid black;
+  outline: none;
   padding: 8px 32px;
   text-align: center;
   background-color: #fff;
   font-size: 100%;
   color: black;
   width: 10%;
-}
-
-.button:hover {
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24), 0 4px 8px 0 rgba(0,0,0,0.19);
-}
-.button:active {
-  transform: translateY(2px);
 }
 
 .grid {
@@ -63,9 +64,23 @@ h2 {
 }
 
 .box {
+  display: table;
   width: 100%;
   min-height: 350px;
-  font-size: 150%;
+}
+
+.title {
+  display: table-row;
+  vertical-align: middle;
+  height: 10%;
+  font-size: 200%;
+}
+
+.output {
+  display: table-cell;
+  vertical-align: middle;
+  font-family: monospace;
+  font-size: 200%;
 }
 
 .a {
