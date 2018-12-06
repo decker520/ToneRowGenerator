@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    <title>Tone Row Generator</title>
+    <meta name="description" content="A Utility for Generating Tone Rows">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  
+  <body>
+
+    <h1>Tone Row Generator</h1>
+
+    <center>
+      <h2>
+        Range: <input id="tone_rng" class="text" type="text" value="12" onchange="ChangeRange()">
+        Division: <input id="tone_dvsn" class="text" type="text"  value="4" onchange="ChangeDivision()">
+      </h2>
+      <div class="grid">
+        <div id="box a" class="box a"><br><br><br><br><br><br><br><br><br><br><br><br></div>
+        <div id="box a" class="box b"></div>
+        <div id="box a" class="box c"></div>
+        <div id="box a" class="box d"></div>
+      </div>
+      <br>
+      <button class="button" onclick="GenerateToneRow()">Generate Tone Row</button>
+      <br>
+      <br>
+      <button class="button">Translate Forward</button>
+      <button class="button">Translate Back</button>
+    </center>
+
+    <script type="text/javascript" src="main.js"></script>
+    
+  </body>
+</html>
