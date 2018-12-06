@@ -3,7 +3,7 @@
     
   <head>
     <title>Tone Row Generator</title>
-    <meta name="description" content="A Utility for Generating Tone Rows" user-scalable=no>
+    <meta name="description" content="A Utility for Generating Tone Rows">
     <link rel="stylesheet" href="main.css">
   </head>
   
@@ -13,8 +13,8 @@
 
     <center>
       <h2>
-        Range: <input id="tone_rng" class="text" type="text" value="12" onClick="this.value.select();" onchange="ChangeRange()">
-        Division: <input id="tone_dvsn" class="text" type="text"  value="4" onClick="this.value.select();" onchange="ChangeDivision()">
+        Range: <input id="tone_rng" class="text" type="text" value="12" onchange="ChangeRange()">
+        Division: <input id="tone_dvsn" class="text" type="text"  value="4" onchange="ChangeDivision()">
       </h2>
       <div class="grid">
         <div id="box a" class="box a">
