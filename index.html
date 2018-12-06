@@ -35,11 +35,16 @@
         </div>
       </div>
       <br>
-      <button class="button" onclick="ClickGen()">Generate Tone Row</button>
+      <button class="button gen" onclick="ClickGen()">Generate Tone Row</button>
       <br>
       <br>
-      <button class="button">Translate Forward</button>
-      <button class="button">Translate Back</button>
+      <table class=buttons>
+        <tr>
+          <td width="30%"><button class="button trans" onclick="ClickTransBkwd()">Translate Back</button></td>
+          <td><button class="button cent" onclick="ClickCntr()">Center</button></td>
+          <td width="30%"><button class="button trans" onclick="ClickTransFwd()">Translate Forward</button></td>
+        </tr>
+      </table>
     </center>
 
     <script type="text/javascript" src="main.js"></script>
