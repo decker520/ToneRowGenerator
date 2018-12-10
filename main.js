@@ -19,7 +19,7 @@ function boxbselect() {
   document.getElementById("box a").style.border = "thick solid magenta";
   document.getElementById("box c").style.border = "thick solid cyan";
   document.getElementById("box d").style.border = "thick solid yellow";
-  selectedBox = 'b'
+  selectedBox = 'b';
 }
 
 function boxcselect() {
@@ -110,25 +110,25 @@ function ClickCntr() {
 
   switch(selectedBox) {
     case 'a':
-        while (ToneRow[0] != 1){
+        while (ToneRow[0] != 1) {
           TransFwd(ToneRow);
           GenerateSecondary();
         }
       break;
     case 'b':
-        while (Inversion[0] != 1){
+        while (Inversion[0] != 1) {
           TransFwd(ToneRow);
           GenerateSecondary();
         }
       break;
     case 'c':
-        while (Retrograde[0] != 1){
+        while (Retrograde[0] != 1) {
           TransFwd(ToneRow);
           GenerateSecondary();
         }
       break;
     case 'd':
-        while (RetroInversion[0] != 1){
+        while (RetroInversion[0] != 1) {
           TransFwd(ToneRow);
           GenerateSecondary();
         }
@@ -210,7 +210,7 @@ function GenerateRetrograde(tone_lst) {
   
 }
 
-function TransFwd(tone_lst){
+function TransFwd(tone_lst) {
    
   tone_lst.push(tone_lst.shift()); 
   
@@ -222,23 +222,6 @@ function TransBkwd(tone_lst){
   tone_lst.unshift(tone_lst.pop()); 
   
   return tone_lst;
-}
-
-function Cntr(tone_lst) {
-  let tmp_lst = tone_lst;
-    //alert("Tone Row " + ToneRow);
-    //alert("Tone Row " + tone_lst);
-  
-  while (tmp_lst[0] != 1){
-
-    TransFwd(ToneRow);
-    //alert("Tone Row " + ToneRow);
-    TransFwd(tmp_lst);
-    
-    GenerateSecondary();
-    //alert("Tmp List " + tone_lst);
-  }
-  
 }
 
 function PrintRow(tone_lst) {  
