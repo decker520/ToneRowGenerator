@@ -36,10 +36,6 @@ h2 {
   padding: 8px 32px;
   color: black;
 }
-.buttons {
-  table-layout: fixed;
-  width: 100%
-}
 
 .gen {
   padding: 3%;
@@ -47,13 +43,11 @@ h2 {
 }
 
 .trans {
-  width: 100%;
-  height: 50%;
+  width: 32%;
 }
 
 .cent {
-  padding: 8.5%;
-  width: 100%;
+  width: 32%;
 }
 
 .button {
@@ -90,7 +84,8 @@ h2 {
 
 .box {
   display: table;
-  width: 100%;
+  border: thick solid;
+  width: 95%;
   min-height: 340px;
   padding-top: 5%;
   padding-bottom: 5%;
@@ -114,15 +109,19 @@ h2 {
 
 .a {
   background-color: magenta;
+  border-color: black;
 }
 .b {
   background-color: #00ff00ff;
+  border-color: #00ff00ff;
 }
 
 .c {
   background-color: cyan;
+  border-color: cyan;
 }
 
 .d {
   background-color: yellow;
+  border-color: yellow;
 }
