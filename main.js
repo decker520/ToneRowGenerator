@@ -4,6 +4,39 @@ let ToneRow = [];
 let Inversion = [];
 let Retrograde = [];
 let RetroInversion = [];
+let selectedBox = 'a';
+
+function boxaselect() {
+  document.getElementById("box a").style.border = "thick solid black";
+  document.getElementById("box b").style.border = "thick solid #00ff00ff";
+  document.getElementById("box c").style.border = "thick solid cyan";
+  document.getElementById("box d").style.border = "thick solid yellow";
+  selectedBox = 'a';
+}
+
+function boxbselect() {
+  document.getElementById("box b").style.border = "thick solid black";
+  document.getElementById("box a").style.border = "thick solid magenta";
+  document.getElementById("box c").style.border = "thick solid cyan";
+  document.getElementById("box d").style.border = "thick solid yellow";
+  selectedBox = 'b'
+}
+
+function boxcselect() {
+  document.getElementById("box c").style.border = "thick solid black";
+  document.getElementById("box a").style.border = "thick solid magenta";
+  document.getElementById("box b").style.border = "thick solid #00ff00ff";
+  document.getElementById("box d").style.border = "thick solid yellow";
+  selectedBox = 'c';
+}
+
+function boxdselect() {
+  document.getElementById("box d").style.border = "thick solid black";
+  document.getElementById("box a").style.border = "thick solid magenta";
+  document.getElementById("box b").style.border = "thick solid #00ff00ff";
+  document.getElementById("box c").style.border = "thick solid cyan";
+  selectedBox = 'd';
+}
 
 function ChangeRange() {
   
@@ -74,9 +107,33 @@ function ClickTransBkwd() {
 }
 
 function ClickCntr() {
-  
-  ToneRow = Cntr(ToneRow);
-  GenerateSecondary();
+
+  switch(selectedBox) {
+    case 'a':
+        while (ToneRow[0] != 1){
+          TransFwd(ToneRow);
+          GenerateSecondary();
+        }
+      break;
+    case 'b':
+        while (Inversion[0] != 1){
+          TransFwd(ToneRow);
+          GenerateSecondary();
+        }
+      break;
+    case 'c':
+        while (Retrograde[0] != 1){
+          TransFwd(ToneRow);
+          GenerateSecondary();
+        }
+      break;
+    case 'd':
+        while (RetroInversion[0] != 1){
+          TransFwd(ToneRow);
+          GenerateSecondary();
+        }
+      break;
+  }
   
 }
 
@@ -168,12 +225,20 @@ function TransBkwd(tone_lst){
 }
 
 function Cntr(tone_lst) {
+  let tmp_lst = tone_lst;
+    //alert("Tone Row " + ToneRow);
+    //alert("Tone Row " + tone_lst);
   
-  while (tone_lst[0] != 1){
-    TransFwd(tone_lst);
+  while (tmp_lst[0] != 1){
+
+    TransFwd(ToneRow);
+    //alert("Tone Row " + ToneRow);
+    TransFwd(tmp_lst);
+    
+    GenerateSecondary();
+    //alert("Tmp List " + tone_lst);
   }
   
-  return tone_lst;
 }
 
 function PrintRow(tone_lst) {  
