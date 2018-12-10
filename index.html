@@ -17,19 +17,19 @@
         Division: <input id="tone_dvsn" class="text" type="text"  value="4" onchange="ChangeDivision()">
       </h2>
       <div class="grid">
-        <div id="box a" class="box a">
+        <div id="box a" class="box a" onclick="boxaselect()">
           <div id="title a" class="title a">Prime Series</div>
           <div id="output a" class="output a"></div>
         </div>
-        <div id="box b" class="box b">
+        <div id="box b" class="box b" onclick="boxbselect()">
           <div id="title b" class="title b">Inversion</div>
           <div id="output b" class="output b"></div>
         </div>
-        <div id="box c" class="box c">
+        <div id="box c" class="box c" onclick="boxcselect()">
           <div id="title c" class="title c">Retrograde</div>
           <div id="output c" class="output c"></div>
         </div>
-        <div id="box d" class="box d">
+        <div id="box d" class="box d" onclick="boxdselect()">
           <div id="title d" class="title d">Retro Inversion</div>
           <div id="output d" class="output d"></div>
         </div>
@@ -38,13 +38,9 @@
       <button class="button gen" onclick="ClickGen()">Generate Tone Row</button>
       <br>
       <br>
-      <table class=buttons>
-        <tr>
-          <td width="30%"><button class="button trans" onclick="ClickTransBkwd()">Translate Back</button></td>
-          <td><button class="button cent" onclick="ClickCntr()">Center</button></td>
-          <td width="30%"><button class="button trans" onclick="ClickTransFwd()">Translate Forward</button></td>
-        </tr>
-      </table>
+      <button class="button trans" onclick="ClickTransBkwd()">Translate Back</button>
+      <button class="button trans" onclick="ClickCntr()">Center on Selected</button>
+      <button class="button trans" onclick="ClickTransFwd()">Translate Forward</button>
     </center>
 
     <script type="text/javascript" src="main.js"></script>
